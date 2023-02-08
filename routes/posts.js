@@ -24,6 +24,7 @@ router.post("/", async (req,res)=>{
     name: req.body.name,
     url: req.body.url,
     title: req.body.title,
+    showImg: req.body.showImg,
   });
   
   try{
@@ -42,6 +43,7 @@ router.post("/", async (req,res)=>{
         name: req.body.name,
         url: req.body.url,
         title: req.body.title,
+        showImg: req.body.showImg,
       }}
       )
     res.json(updatePost)

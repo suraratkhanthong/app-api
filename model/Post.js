@@ -13,6 +13,7 @@ const PostSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  showImg:[String],
   date: {
     type: String,
     default: Date.now()
