@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { json } = require("body-parser");
 const Post = require("../model/Post"); 
 
+
 router.get("/", async (req,res)=>{
   try{
     const findPost = await Post.find().select("name url title")
@@ -12,7 +13,7 @@ router.get("/", async (req,res)=>{
       "showImg": "req.body.showImg",
     }*/
     
-    res.json(findPost)
+    res.send(findPost)
   }catch(err){
     res.json({message: err})
   }

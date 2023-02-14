@@ -6,13 +6,24 @@ const Post = require("./model/Post");
 const bodyParser = require("body-parser");
 require("dotenv/config");
 const postRoute = require("./routes/posts");
+const cors = require('cors');
+
+const corsOptions = {
+  //origin: 'http://localhost:3000',
+  origin: '*',
+  credentials: true,
+};
+app.use(cors(corsOptions));
 
 app.use(bodyParser.json())
 
+mongoose.Promise = global.Promise;
 mongoose.set("strictQuery", false);
 mongoose.connect(process.env.DB_CONNECTION,()=>{
   
   console.log("DB connected")
+}).catch((err)=>{
+  console.log("catch ERR : "+ err)
 });
 
 app.listen(PORT, ()=>{

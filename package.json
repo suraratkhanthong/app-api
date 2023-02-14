@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon  core index.js"
   },
   "keywords": [],
   "author": "Backie",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "git": "^0.1.5",
