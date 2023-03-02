@@ -43,7 +43,7 @@ router.get("/", async (req, res) => {
 })*/
 
 //save post
-const storage = multer.diskStorage({
+/*const storage = multer.diskStorage({
   destination: path.join(__dirname, '../public/', 'uploads'),
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' + file.originalname)
@@ -82,7 +82,7 @@ router.post("/", async (req, res) => {
   } catch (err) {
     res.json({ message: err })
   }
-});
+});*/
 
 router.patch("/:postId", async (req, res) => {
   try {
