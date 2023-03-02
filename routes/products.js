@@ -3,8 +3,8 @@ const { json } = require("body-parser");
 const Product = require("../model/Product");
 const multer = require('multer');
 const path = require('path')
-//const fs = require('fs')
-//const stream = require('stream')
+const fs = require('fs')
+const stream = require('stream')
 
 router.get("/", async (req, res) => {
   try {
@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
     res.json({ message: err })
   }
 })
-/*router.get("/:file", async (req, res) => {
+router.get("/:file", async (req, res) => {
   
   try {
     let file = req.params.file
@@ -40,10 +40,10 @@ router.get("/", async (req, res) => {
   } catch (err) {
     res.json({ message: err })
   }
-})*/
+})
 
 //save post
-/*const storage = multer.diskStorage({
+const storage = multer.diskStorage({
   destination: path.join(__dirname, '../public/', 'uploads'),
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' + file.originalname)
@@ -82,7 +82,7 @@ router.post("/", async (req, res) => {
   } catch (err) {
     res.json({ message: err })
   }
-});*/
+});
 
 router.patch("/:postId", async (req, res) => {
   try {
