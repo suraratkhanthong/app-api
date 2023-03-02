@@ -6,12 +6,10 @@ const path = require('path')
 const fs = require('fs')
 const stream = require('stream')
 
-
 router.get("/", async (req, res) => {
   try {
     const findProduct = await Product.find().select("name url price")
-    //const findPost = [{"_id":"63e9190ec41e8bc8ca005868","name":"bbbbbbbbbb","url":"https://drive.google.com/uc?id=1ZhSDuOpBT9VmLm9EzOCknRxbj9cWUMZr","title":"bbbbbbbbb"},{"_id":"63e91922c41e8bc8ca00586a","name":"bbbbbbbbbb","url":"https://drive.google.com/uc?id=1ZhSDuOpBT9VmLm9EzOCknRxbj9cWUMZr","title":"bbbbbbbbb"},{"_id":"63e91923c41e8bc8ca00586c","name":"bbbbbbbbbb","url":"https://drive.google.com/uc?id=1ZhSDuOpBT9VmLm9EzOCknRxbj9cWUMZr","title":"bbbbbbbbb"}]
-
+   
     res.send(findProduct)
   } catch (err) {
     res.json({ message: err })
@@ -44,15 +42,15 @@ router.get("/:file", async (req, res) => {
 })
 
 //save post
+
+
+router.post("/", async (req, res) => {
 const storage = multer.diskStorage({
   destination: path.join(__dirname, '../public/', 'uploads'),
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' + file.originalname)
   }
 })
-
-router.post("/", async (req, res) => {
-
 
   try {
 
