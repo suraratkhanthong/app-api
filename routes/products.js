@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
     res.json({ message: err })
   }
 })
-router.get("/:file", async (req, res) => {
+/*router.get("/:file", async (req, res) => {
   
   try {
     let file = req.params.file
@@ -40,7 +40,7 @@ router.get("/:file", async (req, res) => {
   } catch (err) {
     res.json({ message: err })
   }
-})
+})*/
 
 //save post
 const storage = multer.diskStorage({
