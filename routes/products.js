@@ -42,15 +42,15 @@ router.get("/:file", async (req, res) => {
 })
 
 //save post
-
-
-router.post("/", async (req, res) => {
 const storage = multer.diskStorage({
   destination: path.join(__dirname, '../public/', 'uploads'),
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' + file.originalname)
   }
 })
+
+
+router.post("/", async (req, res) => {
 
   try {
 
