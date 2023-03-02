@@ -7,7 +7,7 @@ const Product = require("../model/Product");
 //const stream = require('stream')
 
 
-router.use(cors(corsOptions));
+
 
 router.get("/", async (req, res) => {
   try {
