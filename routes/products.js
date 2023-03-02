@@ -6,6 +6,14 @@ const path = require('path')
 //const fs = require('fs')
 //const stream = require('stream')
 
+const cors = require('cors');
+const corsOptions = {
+  //origin: 'http://localhost:3000',
+  origin: '*',
+  credentials: true,
+};
+router.use(cors(corsOptions));
+
 router.get("/", async (req, res) => {
   try {
     //const findProduct = await Product.find().select("name url price")
