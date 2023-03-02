@@ -36,7 +36,7 @@ app.listen(PORT, ()=>{
 })
 
 app.use("/posts", postRoute);
-app.use("/products", productRoute);
+//app.use("/products", productRoute);
 app.get("/", (req,res)=>{
   console.log("log running")
    res.send("API running Index 555");
