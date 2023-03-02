@@ -1,17 +1,12 @@
 const router = require("express").Router();
 const { json } = require("body-parser");
 const Product = require("../model/Product");
-const multer = require('multer');
-const path = require('path')
+//const multer = require('multer');
+//const path = require('path')
 //const fs = require('fs')
 //const stream = require('stream')
 
-const cors = require('cors');
-const corsOptions = {
-  //origin: 'http://localhost:3000',
-  origin: '*',
-  credentials: true,
-};
+
 router.use(cors(corsOptions));
 
 router.get("/", async (req, res) => {
@@ -24,7 +19,7 @@ router.get("/", async (req, res) => {
     res.json({ message: err })
   }
 })
-router.get("/:file", async (req, res) => {
+/*router.get("/:file", async (req, res) => {
   
   try {
     let file = req.params.file
@@ -51,15 +46,15 @@ router.get("/:file", async (req, res) => {
 })
 
 //save post
+
+
+router.post("/", async (req, res) => {
 const storage = multer.diskStorage({
   destination: path.join(__dirname, '../public/', 'uploads'),
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' + file.originalname)
   }
 })
-
-router.post("/", async (req, res) => {
-
 
   try {
 
@@ -118,5 +113,5 @@ router.delete("/:postId", async (req, res) => {
   } catch (err) {
     res.json({ message: err })
   }
-})
+})*/
 module.exports = router;
