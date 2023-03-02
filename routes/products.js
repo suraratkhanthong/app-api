@@ -3,8 +3,8 @@ const { json } = require("body-parser");
 const Product = require("../model/Product");
 const multer = require('multer');
 const path = require('path')
-const fs = require('fs')
-const stream = require('stream')
+//const fs = require('fs')
+//const stream = require('stream')
 
 router.get("/", async (req, res) => {
   try {
