@@ -20,8 +20,8 @@ app.use(bodyParser.json())
 
 mongoose.Promise = global.Promise;
 mongoose.set("strictQuery", false);
-///mongoose.connect(process.env.DB_CONNECTION,()=>{
-  mongoose.connect("mongodb://0.0.0.0:27017/products",()=>{
+mongoose.connect(process.env.DB_CONNECTION,()=>{
+  // mongoose.connect("mongodb://0.0.0.0:27017/products",()=>{
     console.log("DB connected")
   },{
   useNewUrlParser:true,
