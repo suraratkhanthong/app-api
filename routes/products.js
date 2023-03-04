@@ -19,7 +19,7 @@ router.get("/:file", async (req, res) => {
   
   try {
     let file = req.params.file
-    const r = fs.createReadStream('./public/uploads/'+file) // or any other way to get a readable stream
+    const r = fs.createReadStream(`${process.cwd()}/public/uploads/`+file) // or any other way to get a readable stream
     const ps = new stream.PassThrough() 
     
     stream.pipeline(
