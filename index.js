@@ -7,7 +7,10 @@ require("dotenv/config");
 const postRoute = require("./routes/posts");
 const productRoute = require("./routes/products");
 const cors = require('cors');
+const path = require("path");
 
+app.use(express.static(path.join(__dirname,
+"public", "uploads")));
 
 const corsOptions = {
   //origin: 'http://localhost:3000',
