@@ -16,8 +16,7 @@ router.get("/", async (req, res) => {
   }
 })
 
-router.use(express.static(path.join(__dirname,
-"public", "uploads")));
+
 
 /*router.get("/:file", async (req, res) => {
   
